@@ -22,4 +22,5 @@ class TodoGet(BaseModel):
 class TodoPut(BaseModel):
     title: Optional[str] = None
     description: Optional[str] = None
+    is_active: Optional[bool] = None
     updated_at: Optional[datetime] = None
