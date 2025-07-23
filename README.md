@@ -24,7 +24,7 @@ Alembic — DB migrations
 📦 Installation
 bash
 Копировать код
-git clone https://github.com/yourusername/todo-app.git
+git clone https://github.com/knosir/todo.git
 cd todo-app
 uv venv install  # or: pip install -r requirements.txt
 🧪 API Endpoints
