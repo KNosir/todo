@@ -5,7 +5,12 @@ dependencies = [
     "fastapi",
     "uvicorn[standard]",
     "sqlalchemy",
+    "alembic",
     "asyncpg",
     "pydantic-settings",
-    "ruff"
+    "ruff",
+    "psycopg2-binary"
 ]
+
+[tool.ruff]
+exclude = ["alembic/versions"]

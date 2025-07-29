@@ -13,7 +13,13 @@ services:
     depends_on:
       - postgres
     command: >
-      uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+      bash -c "
+        echo 'Waiting for PostgreSQL...' &&
+        until pg_isready -h postgres -p 5432; do sleep 1; done &&
+        echo 'PostgreSQL ready. Running migrations...' &&
+        alembic upgrade head &&
+        uvicorn app.main:app --host 0.0.0.0 --port 8000
+      "
 
   postgres:
     image: postgres:15
